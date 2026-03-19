@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আয়াতুল্লাহ একাডেমী | অনলাইন কোরআন ও ইসলামি শিক্ষা</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1a6b3c;
+    --green-dark: #0f4526;
+    --green-light: #2d8a55;
+    --gold: #c9a227;
+    --gold-light: #e8c050;
+    --cream: #faf7f0;
+    --white: #ffffff;
+    --text: #1a1a1a;
+    --text-light: #555;
+    --shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    direction: ltr;
+  }
+
+  /* ===== TOP BAR ===== */
+  .topbar {
+    background: var(--green-dark);
+    color: var(--gold-light);
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== HEADER / NAV ===== */
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 3px 12px rgba(26,107,60,0.3);
+  }
+
+  .logo-text h1 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.2;
+  }
+
+  .logo-text span {
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    align-items: center;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  nav ul li a:hover {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--white) !important;
+    font-weight: 600 !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    transition: all 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold-light) !important;
+    transform: translateY(-1px);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 50%, var(--green-light) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,162,39,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    animation: fadeDown 0.6s ease;
+  }
+
+  .hero h2 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 16px;
+    animation: fadeDown 0.7s ease;
+  }
+
+  .hero h2 span {
+    color: var(--gold-light);
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 36px;
+    animation: fadeDown 0.8s ease;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeDown 0.9s ease;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(201,162,39,0.4);
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(201,162,39,0.5);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s;
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease;
+  }
+
+  .stat-item {
+    text-align: center;
+    color: var(--white);
+  }
+
+  .stat-item .number {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .stat-item .label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ===== WELCOME SECTION ===== */
+  .welcome-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: rgba(26,107,60,0.08);
+    color: var(--green);
+    border: 1px solid rgba(26,107,60,0.2);
+    padding: 5px 18px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--green-dark);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .section-subtitle {
+    color: var(--text-light);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 48px;
+  }
+
+  /* ===== FEATURES CARDS ===== */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .feature-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(26,107,60,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--green), var(--gold));
+    border-radius: 20px 20px 0 0;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(26,107,60,0.15);
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(26,107,60,0.1), rgba(26,107,60,0.05));
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+  }
+
+  .feature-card h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.15rem;
+    color: var(--green-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .feature-card p {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* ===== COURSES SECTION ===== */
+  .courses-section {
+    background: linear-gradient(180deg, var(--cream) 0%, #f0ebe0 100%);
+    padding: 80px 24px;
+  }
+
+  .courses-section .section-title,
+  .courses-section .section-tag {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .courses-section > div:first-child {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .course-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+  }
+
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .course-header {
+    padding: 28px 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .course-emoji {
+    font-size: 2.5rem;
+    width: 64px;
+    height: 64px;
+    background: var(--cream);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .course-header-text h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.1rem;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+  }
+
+  .course-header-text span {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 600;
+    background: rgba(201,162,39,0.1);
+    padding: 3px 10px;
+    border-radius: 50px;
+  }
+
+  .course-body {
+    padding: 0 24px 24px;
+  }
+
+  .course-body p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .course-features {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .course-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .course-features li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .course-footer {
+    padding: 16px 24px;
+    background: rgba(26,107,60,0.03);
+    border-top: 1px solid rgba(26,107,60,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .course-price {
+    font-family: 'Noto Serif Bengali', serif;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .btn-enroll {
+    background: var(--green);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-enroll:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ===== WHY US SECTION ===== */
+  .why-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .why-content h2 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.9rem;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .why-content p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .why-list {
+    list-style: none;
+  }
+
+  .why-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .why-list-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .why-list-text strong {
+    display: block;
+    color: var(--green-dark);
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+  }
+
+  .why-list-text span {
+    color: var(--text-light);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .why-visual {
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    border-radius: 24px;
+    padding: 40px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-visual::before {
+    content: '﴾';
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    font-size: 8rem;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+  }
+
+  .why-visual h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+  }
+
+  .visual-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .visual-stat {
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .visual-stat .num {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .visual-stat .lbl {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 4px;
+  }
+
+  .quran-quote {
+    margin-top: 28px;
+    padding: 20px;
+    background: rgba(201,162,39,0.15);
+    border-radius: 14px;
+    border-left: 4px solid var(--gold);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials-section {
+    background: var(--green-dark);
+    padding: 80px 24px;
+  }
+
+  .testimonials-section .section-title {
+    color: var(--white);
+  }
+
+  .testimonials-section .section-tag {
+    background: rgba(201,162,39,0.15);
+    color: var(--gold-light);
+    border-color: rgba(201,162,39,0.3);
+  }
+
+  .testimonials-section > div:first-child {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 28px 24px;
+    transition: transform 0.3s;
+    backdrop-filter: blur(8px);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.1);
+  }
+
+  .stars {
+    color: var(--gold-light);
+    font-size: 1rem;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-card p {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .author-info strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.92rem;
+  }
+
+  .author-info span {
+    color: var(--gold-light);
+    font-size: 0.8rem;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .process-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-number {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 20px rgba(26,107,60,0.3);
+  }
+
+  .step h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1rem;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    color: var(--text-light);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* ===== CTA SECTION ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--gold) 0%, #a07810 100%);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '☾';
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10rem;
+    color: rgba(255,255,255,0.06);
+  }
+
+  .cta-section h2 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+    margin-bottom: 36px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--green-dark);
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 2px solid rgba(255,255,255,0.6);
+    transition: all 0.3s;
+  }
+
+  .btn-outline-white:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+
+  /* ===== CONTACT SECTION ===== */
+  .contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.8rem;
+    color: var(--green-dark);
+    margin-bottom: 14px;
+  }
+
+  .contact-info p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .contact-item-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(26,107,60,0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item-text strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 2px;
+  }
+
+  .contact-item-text a, .contact-item-text span {
+    color: var(--green-dark);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-form h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    font-size: 1.2rem;
+    color: var(--green-dark);
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(26,107,60,0.15);
+    border-radius: 12px;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--green);
+    background: var(--white);
+  }
+
+  .form-group textarea {
+    height: 110px;
+    resize: vertical;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-submit:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.75);
+    padding: 60px 24px 30px;
+  }
+
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-about h3 {
+    font-family: 'Noto Serif Bengali', serif;
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-about p {
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .footer-links h4 {
+    color: var(--gold-light);
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links ul li a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links ul li a:hover {
+    color: var(--gold-light);
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.82rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+
+  .social-link:hover {
+    background: var(--gold);
+  }
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    z-index: 999;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .why-section { grid-template-columns: 1fr; }
+    .contact-section { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  🌙 আস্সালামু আলাইকুম — আয়াতুল্লাহ একাডেমীতে আপনাকে স্বাগতম! বিনামূল্যে ট্রায়াল ক্লাস বুক করুন আজই।
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <div class="logo-icon">📖</div>
+      <div class="logo-text">
+        <h1>আয়াতুল্লাহ একাডেমী</h1>
+        <span>Ayatullah Academy | অনলাইন কোরআন শিক্ষা</span>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#courses">কোর্সসমূহ</a></li>
+        <li><a href="#why">কেন আমরা</a></li>
+        <li><a href="#process">কীভাবে শুরু করবেন</a></li>
+        <li><a href="#testimonials">রিভিউ</a></li>
+        <li><a href="#contact">যোগাযোগ</a></li>
+        <li><a href="#contact" class="nav-cta">ফ্রি ট্রায়াল 🎁</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">🌟 বিশ্বের যেকোনো প্রান্ত থেকে শিখুন</span>
+    <h2>আপনার সন্তানকে দিন<br><span>কোরআনের আলো</span></h2>
+    <p>
+      আয়াতুল্লাহ একাডেমীতে অভিজ্ঞ শিক্ষকদের তত্ত্বাবধানে অনলাইনে শিখুন কোরআন তিলাওয়াত,<br>
+      তাজবিদ, নামাজ ও ইসলামি আদব-আখলাক। বাংলাদেশ, UK, USA সহ বিশ্বের যেকোনো দেশ থেকে।
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">🎁 বিনামূল্যে ট্রায়াল ক্লাস বুক করুন</a>
+      <a href="#courses" class="btn-secondary">📚 কোর্স দেখুন</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="number">৫০০+</span>
+        <span class="label">সন্তুষ্ট শিক্ষার্থী</span>
+      </div>
+      <div class="stat-item">
+        <span class="number">১৫+</span>
+        <span class="label">অভিজ্ঞ শিক্ষক</span>
+      </div>
+      <div class="stat-item">
+        <span class="number">১০+</span>
+        <span class="label">দেশে শিক্ষার্থী</span>
+      </div>
+      <div class="stat-item">
+        <span class="number">৯৮%</span>
+        <span class="label">অভিভাবকদের সন্তুষ্টি</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME -->
+<section class="welcome-section">
+  <span class="section-tag">আমাদের পরিচয়</span>
+  <h2 class="section-title">আস্সালামু আলাইকুম, আয়াতুল্লাহ একাডেমীতে আপনাকে স্বাগতম!</h2>
+  <p class="section-subtitle">
+    আমরা বিশ্বাস করি প্রতিটি মুসলিম শিশুর কোরআনের সাথে গভীর সম্পর্ক গড়ে উঠুক। 
+    আমাদের একাডেমীতে আধুনিক প্রযুক্তি এবং ঐতিহ্যবাহী ইসলামি শিক্ষার সমন্বয়ে 
+    আপনার সন্তানকে একজন আদর্শ মুসলিম হিসেবে গড়ে তোলার সুযোগ রয়েছে।
+  </p>
+</section>
+
+<!-- FEATURES -->
+<div class="features-grid">
+  <div class="feature-card">
+    <div class="feature-icon">🖥️</div>
+    <h3>লাইভ অনলাইন ক্লাস</h3>
+    <p>Zoom/Google Meet-এ সরাসরি শিক্ষকের সাথে ইন্টারেক্টিভ ক্লাস। যেকোনো ডিভাইস থেকে যোগ দিন।</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">👤</div>
+    <h3>ওয়ান-টু-ওয়ান মনোযোগ</h3>
+    <p>প্রতিটি শিক্ষার্থী পায় আলাদা মনোযোগ। শিশুর গতি অনুযায়ী পাঠদান পদ্ধতি সাজানো হয়।</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🕐</div>
+    <h3>নমনীয় সময়সূচি</h3>
+    <p>বাংলাদেশ, UK, USA সহ যেকোনো টাইমজোনে সুবিধামতো সময়ে ক্লাস বুক করুন।</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🎓</div>
+    <h3>অভিজ্ঞ শিক্ষকমণ্ডলী</h3>
+    <p>সার্টিফাইড হাফেজ ও আলেমদের তত্ত্বাবধানে পাঠদান। তাজবিদ ও সহি তিলাওয়াতে দক্ষ শিক্ষকরা।</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">📊</div>
+    <h3>নিয়মিত প্রগ্রেস রিপোর্ট</h3>
+    <p>অভিভাবকরা পান সন্তানের অগ্রগতির বিস্তারিত রিপোর্ট। WhatsApp গ্রুপে নিয়মিত আপডেট।</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🌍</div>
+    <h3>প্রবাসীদের জন্য আদর্শ</h3>
+    <p>বিদেশে বসবাসরত বাংলাদেশি পরিবারের সন্তানদের জন্য বিশেষভাবে ডিজাইন করা কারিকুলাম।</p>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section class="courses-section" id="courses">
+  <div>
+    <span class="section-tag">আমাদের কোর্সসমূহ</span>
+    <h2 class="section-title">যা যা শেখানো হয়</h2>
+    <p class="section-subtitle">৮ থেকে ১৩ বছর বয়সী শিশুদের জন্য পূর্ণাঙ্গ ইসলামি শিক্ষার প্যাকেজ</p>
+  </div>
+
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-header">
+        <div class="course-emoji">📖</div>
+        <div class="course-header-text">
+          <h3>কোরআন তিলাওয়াত কোর্স</h3>
+          <span>শিশু-বান্ধব</span>
+        </div>
+      </div>
+      <div class="course-body">
+        <p>নূরানি কায়দা থেকে শুরু করে সহি তিলাওয়াত পর্যন্ত ধাপে ধাপে শেখানো হয়।</p>
+        <ul class="course-features">
+          <li>নূরানি কায়দা শিক্ষা</li>
+          <li>হরফ চেনা ও উচ্চারণ</li>
+          <li>সহি তিলাওয়াত অনুশীলন</li>
+          <li>ধারাবাহিক কোরআন তেলাওয়াত</li>
+        </ul>
+      </div>
+      <div class="course-footer">
+        <span class="course-price">মাসিক ভর্তি উন্মুক্ত</span>
+        <a href="#contact" class="btn-enroll">ভর্তি হন</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-header">
+        <div class="course-emoji">🎵</div>
+        <div class="course-header-text">
+          <h3>তাজবিদ কোর্স</h3>
+          <span>মধ্যবর্তী স্তর</span>
+        </div>
+      </div>
+      <div class="course-body">
+        <p>কোরআনের বিশুদ্ধ উচ্চারণ ও তিলাওয়াতের নিয়মকানুন সঠিকভাবে শেখানো হয়।</p>
+        <ul class="course-features">
+          <li>মাখারিজ আল-হুরুফ</li>
+          <li>সিফাতুল হুরুফ</li>
+          <li>মাদ ও গুন্নাহর নিয়ম</li>
+          <li>ওয়াকফ ও ইবতিদা</li>
+        </ul>
+      </div>
+      <div class="course-footer">
+        <span class="course-price">মাসিক ভর্তি উন্মুক্ত</span>
+        <a href="#contact" class="btn-enroll">ভর্তি হন</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-header">
+        <div class="course-emoji">🕌</div>
+        <div class="course-header-text">
+          <h3>নামাজ শিক্ষা কোর্স</h3>
+          <span>প্রাথমিক স্তর</span>
+        </div>
+      </div>
+      <div class="course-body">
+        <p>নামাজের নিয়ম, দোয়া ও সুরা মুখস্থ করা থেকে শুরু করে পাঁচ ওয়াক্ত নামাজ শেখানো হয়।</p>
+        <ul class="course-features">
+          <li>নামাজের ফরজ ও সুন্নাহ</li>
+          <li>প্রয়োজনীয় দোয়া ও সুরা</li>
+          <li>নামাজের সঠিক পদ্ধতি</li>
+          <li>পাঁচ ওয়াক্ত নামাজ অনুশীলন</li>
+        </ul>
+      </div>
+      <div class="course-footer">
+        <span class="course-price">মাসিক ভর্তি উন্মুক্ত</span>
+        <a href="#contact" class="btn-enroll">ভর্তি হন</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-header">
+        <div class="course-emoji">🌟</div>
+        <div class="course-header-text">
+          <h3>ইসলামিক আদব ও আখলাক</h3>
+          <span>চরিত্র গঠন</span>
+        </div>
+      </div>
+      <div class="course-body">
+        <p>ইসলামের মূল্যবোধ ও নৈতিক শিক্ষার মাধ্যমে শিশুদের চরিত্র গঠনে সহায়তা করা হয়।</p>
+        <ul class="course-features">
+          <li>আল্লাহ ও নবীর ভালোবাসা</li>
+          <li>পিতামাতার প্রতি আদব</li>
+          <li>ইসলামিক শিষ্টাচার</li>
+          <li>সাহাবীদের জীবনী থেকে শিক্ষা</li>
+        </ul>
+      </div>
+      <div class="course-footer">
+        <span class="course-price">মাসিক ভর্তি উন্মুক্ত</span>
+        <a href="#contact" class="btn-enroll">ভর্তি হন</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-header">
+        <div class="course-emoji">💾</div>
+        <div class="course-header-text">
+          <h3>হিফজ প্রোগ্রাম</h3>
+          <span>উচ্চতর স্তর</span>
+        </div>
+      </div>
+      <div class="course-body">
+        <p>ছোট ছোট সুরা থেকে শুরু করে কোরআনের বিভিন্ন অংশ মুখস্থ করানো হয়।</p>
+        <ul class="course-features">
+          <li>ছোট সুরাসমূহ হিফজ</li>
+          <li>মুখস্থ করার কৌশল</li>
+          <li>রিভিশন পদ্ধতি</li>
+          <li>ধারাবাহিক মুরাজাআ</li>
+        </ul>
+      </div>
+      <div class="course-footer">
+        <span class="course-price">মাসিক ভর্তি উন্মুক্ত</span>
+        <a href="#contact" class="btn-enroll">ভর্তি হন</a>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-header">
+        <div class="course-emoji">📦</div>
+        <div class="course-header-text">
+          <h3>কম্বো প্যাকেজ</h3>
+          <span>সেরা মূল্য</span>
+        </div>
+      </div>
+      <div class="course-body">
+        <p>একসাথে কোরআন, তাজবিদ ও ইসলামিক স্টাডিজ — সম্পূর্ণ প্যাকেজে সবচেয়ে সাশ্রয়ী মূল্যে।</p>
+        <ul class="course-features">
+          <li>সব কোর্সের সমন্বয়</li>
+          <li>বিশেষ ছাড় ও সুবিধা</li>
+          <li>অতিরিক্ত মক টেস্ট</li>
+          <li>সার্টিফিকেট প্রদান</li>
+        </ul>
+      </div>
+      <div class="course-footer">
+        <span class="course-price">বিশেষ ছাড় পাওয়া যাচ্ছে</span>
+        <a href="#contact" class="btn-enroll">জিজ্ঞেস করুন</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-section">
+    <div class="why-content">
+      <span class="section-tag">কেন আমাদের বেছে নেবেন</span>
+      <h2>আয়াতুল্লাহ একাডেমী কেন সেরা?</h2>
+      <p>আমরা শুধু পাঠ্যক্রম পড়াই না — আমরা আপনার সন্তানের অন্তরে কোরআনের মহব্বত ও ইসলামের আলো জ্বালিয়ে দেওয়ার চেষ্টা করি।</p>
+      <ul class="why-list">
+        <li>
+          <div class="why-list-icon">🏆</div>
+          <div class="why-list-text">
+            <strong>সার্টিফাইড হাফেজ শিক্ষকমণ্ডলী</strong>
+            <span>সকল শিক্ষক হাফেজ ও ইজাজাতপ্রাপ্ত। তাজবিদ ও সহি তিলাওয়াতে পূর্ণ দক্ষতা রাখেন।</span>
+          </div>
+        </li>
+        <li>
+          <div class="why-list-icon">🌍</div>
+          <div class="why-list-text">
+            <strong>প্রবাসী বাংলাদেশিদের জন্য বিশেষভাবে তৈরি</strong>
+            <span>UK, USA, Australia, Canada সহ বিশ্বের যেকোনো দেশ থেকে সহজে পড়ানো যায়।</span>
+          </div>
+        </li>
+        <li>
+          <div class="why-list-icon">💬</div>
+          <div class="why-list-text">
+            <strong>বাংলায় সম্পূর্ণ পাঠদান</strong>
+            <span>বাংলাভাষী শিশুদের জন্য বাংলায় শেখানো হয়, তাই সন্তান সহজেই বুঝতে পারে।</span>
+          </div>
+        </li>
+        <li>
+          <div class="why-list-icon">📅</div>
+          <div class="why-list-text">
+            <strong>যেকোনো সময়, যেকোনো ডিভাইসে</strong>
+            <span>ফোন, ট্যাবলেট বা কম্পিউটার — যেটিতে সুবিধা সেটি থেকেই ক্লাস করুন।</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="why-visual">
+      <h3>আমাদের সাফল্যের গল্প</h3>
+      <div class="visual-stats">
+        <div class="visual-stat">
+          <span class="num">৫০০+</span>
+          <span class="lbl">শিক্ষার্থী</span>
+        </div>
+        <div class="visual-stat">
+          <span class="num">৩ বছর+</span>
+          <span class="lbl">অভিজ্ঞতা</span>
+        </div>
+        <div class="visual-stat">
+          <span class="num">১৫+</span>
+          <span class="lbl">দেশে সেবা</span>
+        </div>
+        <div class="visual-stat">
+          <span class="num">৯৮%</span>
+          <span class="lbl">সন্তুষ্টি</span>
+        </div>
+      </div>
+      <div class="quran-quote">
+        "তোমাদের মধ্যে সেই ব্যক্তি সর্বোত্তম যে কোরআন শেখে এবং শেখায়।"
+        <br><strong>— সহিহ বুখারি</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process-section" id="process">
+  <span class="section-tag">শুরু করা সহজ</span>
+  <h2 class="section-title">মাত্র ৪টি ধাপে শুরু করুন</h2>
+  <p class="section-subtitle">ভর্তি থেকে প্রথম ক্লাস পর্যন্ত পুরো প্রক্রিয়া একদম সহজ ও ঝামেলামুক্ত।</p>
+
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-number">১</div>
+      <h3>যোগাযোগ করুন</h3>
+      <p>WhatsApp বা ফর্মের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।</p>
+    </div>
+    <div class="step">
+      <div class="step-number">২</div>
+      <h3>ফ্রি ট্রায়াল বুক করুন</h3>
+      <p>বিনামূল্যে একটি ট্রায়াল ক্লাসের সময় নির্ধারণ করুন।</p>
+    </div>
+    <div class="step">
+      <div class="step-number">৩</div>
+      <h3>মূল্যায়ন করুন</h3>
+      <p>শিশুর মান যাচাই করে উপযুক্ত কোর্সে ভর্তি করা হয়।</p>
+    </div>
+    <div class="step">
+      <div class="step-number">৪</div>
+      <h3>ক্লাস শুরু করুন</h3>
+      <p>সুবিধামতো সময়ে নিয়মিত ক্লাস শুরু হয়ে যায়।</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div>
+    <span class="section-tag">অভিভাবকদের কথা</span>
+    <h2 class="section-title">তারা যা বলেছেন</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.7)">বিশ্বের বিভিন্ন দেশে আমাদের শিক্ষার্থীদের অভিভাবকদের অভিজ্ঞতা</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"আমি লন্ডনে থাকি। মেয়েকে কোরআন শেখানোর জন্য এতদিন খুব চিন্তায় ছিলাম। আয়াতুল্লাহ একাডেমীতে ভর্তি করার পর থেকে সে প্রতিদিন নিজেই পড়তে বসে। মাশাআল্লাহ!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">🧕</div>
+        <div class="author-info">
+          <strong>সাবরিনা আক্তার</strong>
+          <span>লন্ডন, যুক্তরাজ্য</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"ছেলে আগে কোরআন পড়তে চাইত না। এখন নিজেই শিক্ষককে পছন্দ করে, ক্লাসের জন্য অপেক্ষা করে। শিক্ষকদের পদ্ধতি অসাধারণ, বাচ্চাদের সাথে বন্ধুর মতো আচরণ করেন।"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👨</div>
+        <div class="author-info">
+          <strong>মো. রফিকুল ইসলাম</strong>
+          <span>নিউ ইয়র্ক, আমেরিকা</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"সিডনিতে বসে বাচ্চাকে বাংলায় কোরআন পড়ানো সম্ভব হবে ভাবিনি। আয়াতুল্লাহ একাডেমী সেটা সম্ভব করেছে। দুই মাসেই অনেক উন্নতি। জাযাকাল্লাহ খায়ের।"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">🧕</div>
+        <div class="author-info">
+          <strong>নাসরিন বেগম</strong>
+          <span>সিডনি, অস্ট্রেলিয়া</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>আজই শুরু করুন আপনার সন্তানের কোরআনের যাত্রা</h2>
+  <p>বিনামূল্যে একটি ট্রায়াল ক্লাস নিন। কোনো চাপ নেই, কোনো বাধ্যবাধকতা নেই।</p>
+  <div class="cta-buttons">
+    <a href="#contact" class="btn-white">🎁 ফ্রি ট্রায়াল ক্লাস বুক করুন</a>
+    <a href="https://wa.me/8801XXXXXXXXX" class="btn-outline-white">💬 WhatsApp করুন</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-section">
+    <div class="contact-info">
+      <span class="section-tag">যোগাযোগ</span>
+      <h2>আমাদের সাথে কথা বলুন</h2>
+      <p>ভর্তি সংক্রান্ত যেকোনো প্রশ্ন, কোর্স সম্পর্কে জানতে বা ট্রায়াল ক্লাস বুক করতে আজই যোগাযোগ করুন।</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div class="contact-item-text">
+            <strong>WhatsApp / ফোন</strong>
+            <a href="https://wa.me/8801XXXXXXXXX">+880 1XXX-XXXXXX</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <strong>ইমেইল</strong>
+            <a href="mailto:info@ayatullahacademy.com">info@ayatullahacademy.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📘</div>
+          <div class="contact-item-text">
+            <strong>Facebook Page</strong>
+            <a href="#">Ayatullah Academy</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>সাড়া দেওয়ার সময়</strong>
+            <span>সকাল ৯টা - রাত ১১টা (BST / GMT+6)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>📝 ভর্তির আবেদন করুন</h3>
+      <div class="form-group">
+        <label>অভিভাবকের নাম *</label>
+        <input type="text" placeholder="আপনার নাম লিখুন">
+      </div>
+      <div class="form-group">
+        <label>শিক্ষার্থীর নাম *</label>
+        <input type="text" placeholder="সন্তানের নাম লিখুন">
+      </div>
+      <div class="form-group">
+        <label>বয়স</label>
+        <input type="number" placeholder="শিক্ষার্থীর বয়স">
+      </div>
+      <div class="form-group">
+        <label>WhatsApp নম্বর *</label>
+        <input type="tel" placeholder="+880 বা দেশের কোড সহ">
+      </div>
+      <div class="form-group">
+        <label>আপনি কোথায় থাকেন?</label>
+        <input type="text" placeholder="যেমন: London, UK / New York, USA">
+      </div>
+      <div class="form-group">
+        <label>কোন কোর্সে আগ্রহী?</label>
+        <select>
+          <option>কোরআন তিলাওয়াত</option>
+          <option>তাজবিদ কোর্স</option>
+          <option>নামাজ শিক্ষা</option>
+          <option>হিফজ প্রোগ্রাম</option>
+          <option>কম্বো প্যাকেজ</option>
+          <option>নিশ্চিত নই, পরামর্শ চাই</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>অতিরিক্ত কিছু জানাতে চান?</label>
+        <textarea placeholder="যেকোনো প্রশ্ন বা মন্তব্য..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="alert('আপনার আবেদন পাঠানো হয়েছে! শীঘ্রই আমরা যোগাযোগ করব। জাযাকাল্লাহ খায়ের।')">
+        📨 আবেদন পাঠান
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <h3>🌙 আয়াতুল্লাহ একাডেমী</h3>
+      <p>
+        বিশ্বের যেকোনো প্রান্তে বসবাসরত বাংলাদেশি মুসলিম পরিবারের সন্তানদের জন্য 
+        অনলাইনে কোরআন ও ইসলামি শিক্ষার নির্ভরযোগ্য প্ল্যাটফর্ম। 
+        আমাদের লক্ষ্য — প্রতিটি ঘরে কোরআনের আলো পৌঁছে দেওয়া।
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4>কোর্স</h4>
+      <ul>
+        <li><a href="#">কোরআন তিলাওয়াত</a></li>
+        <li><a href="#">তাজবিদ কোর্স</a></li>
+        <li><a href="#">নামাজ শিক্ষা</a></li>
+        <li><a href="#">হিফজ প্রোগ্রাম</a></li>
+        <li><a href="#">কম্বো প্যাকেজ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>একাডেমী</h4>
+      <ul>
+        <li><a href="#">আমাদের সম্পর্কে</a></li>
+        <li><a href="#">শিক্ষকমণ্ডলী</a></li>
+        <li><a href="#">ভর্তি প্রক্রিয়া</a></li>
+        <li><a href="#">ফি কাঠামো</a></li>
+        <li><a href="#">সার্টিফিকেট</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>সহায়তা</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">যোগাযোগ</a></li>
+        <li><a href="#">গোপনীয়তা নীতি</a></li>
+        <li><a href="#">ব্লগ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© ২০২৪ আয়াতুল্লাহ একাডেমী। সর্বস্বত্ব সংরক্ষিত।</p>
+    <div class="social-links">
+      <a href="#" class="social-link">f</a>
+      <a href="#" class="social-link">▶</a>
+      <a href="#" class="social-link">in</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/8801XXXXXXXXX" class="whatsapp-float" title="WhatsApp এ মেসেজ করুন">💬</a>
+
+</body>
+</html>
